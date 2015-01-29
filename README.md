@@ -11,6 +11,21 @@ With HrMatrix you can create a JavaScript matrix in a human readable way.
 
 
 ### create a matrix
+```javascript
+
+var matrix = new HrMatrix(`
+	
+			| rock	| paper	| scissor	
+	rock	|	0	|	-	|	+
+	paper	|	+	|	0	|	-
+	scissor	|	-	|	+	|	0
+
+
+`);
+
+```
+
+or if you use ES < 6
 
 ```javascript
 
@@ -55,7 +70,7 @@ theMatrix now includes a two dimensional list like this:
 
 ```
 
-if you want a row set the line key:
+if you want a row set the first key:
 
 ```javascript
 
