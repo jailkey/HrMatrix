@@ -6,14 +6,15 @@ var HrMatrix = function(content, config){
 	var ERROR_WRONG_TYPE = "Content must be a string or a function!",
 		ERROR_KEY = "Key is not defined!",
 		ERROR_SUBKEY = "Subkey is not defined!",
-		ERROR_VALUE = "value is not defined!";
+		ERROR_VALUE = "Value is not defined!";
 
 	if(typeof content === "function"){
-		this.content = content
-						.toString()
-						.replace(/(^function\s*\(\)\s*\{\s*\/\*)([\s\S]*)(\*\/\s*\})/g, function(){
-							return arguments[2];
-						});
+		this.content = 
+			content
+				.toString()
+				.replace(/(^function\s*\(\)\s*\{\s*\/\*)([\s\S]*)(\*\/\s*\})/g, function(){
+					return arguments[2];
+				});
 	}else if(typeof content === "string"){
 		this.content = content
 	}else{
